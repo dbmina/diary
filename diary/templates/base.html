@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset='utf-8'>
+    <title>My diary</title>
+    	{% load static %}
+		{% load sass_tags %}
+		<link rel="stylesheet" type="text/css" href="{% sass_src 'diary/scss/style.scss' %}">
+  </head>
+  <header>My one and only diary</header> 
+  <body>
+  {% block content %}
+  {% endblock %}
+  </body>
+</html>

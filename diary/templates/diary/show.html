@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div >
+      <a href="{% url 'diary:index' %}">return</a>
+      <h1 >Title: {{ post.title }}</h1>
+      <h3 >Satisfaction: {{ post.satisfaction }}</h3>
+      <p >Content: {{ post.content }}</p>
+      <a href="{% url 'diary:edit' id=post.id %}">Edit</a>
+      <a href="{% url 'diary:delete' id=post.id %}">Delete</a> 
+    </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>new diary</h1>
+    <form action="{% url 'diary:index' %}" method="POST">
+      {% csrf_token %}
+      <p>title</p>
+      <input name="title" /> <br />
+      <p>Satisfaction</p>
+      <input name="satisfaction" /> <br />
+      <p>content</p>
+      <textarea name="content" rows="30" cols="50"></textarea> <br />
+      <input type="submit" value="submit" />
+    </form>
+   {% endblock content %}

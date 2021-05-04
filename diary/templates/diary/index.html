@@ -1,0 +1,27 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <a href="/post/create"><div class="add">add</div></a></h1><br/>
+ <div class="whole">
+    {%for post in posts%}
+    <div class="box">
+    <div class="list" style="border: 5px solid rgb(54, 165, 216);">
+      <a href="/post/{{post.id}}">
+        <h3 class="title"> {{post.title}} </h3>
+        </a> 
+        <div class="ref">
+        <a href="{% url 'diary:edit' id=post.id %}">   Edit</a>
+        <a href="{% url 'diary:delete' id=post.id %}">   Delete</a>  
+        </div>
+       <br/>
+    
+        <h3 class="satisfaction"> satisfied: {{post.satisfaction}}</h3>
+      <h3 class="content"> {{post.content}} </h3>
+        
+     
+     
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+  {% endblock content %}
